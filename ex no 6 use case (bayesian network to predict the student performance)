@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+from pgmpy.models import DiscreteBayesianNetwork
+from pgmpy.estimators import MaximumLikelihoodEstimator
+from pgmpy.inference import VariableElimination
+
+np.random.seed(42)
+
+model = DiscreteBayesianNetwork([
+    ('Attendance', 'Study_Hours'),
+    ('Study_Hours', 'Pass')
+])
+
+attendance = np.random.choice(['Poor','Good'], 200, p=[0.4,0.6])
+
+study_hours = []
+for a in attendance:
+    if a == 'Good':
+        study_hours.append(np.random.choice(['Low','Medium','High'], p=[0.1,0.4,0.5]))
+    else:  # Poor
+        study_hours.append(np.random.choice(['Low','Medium','High'], p=[0.6,0.3,0.1]))
+
+pass_result = []
+for s in study_hours:
+    if s == 'High':
+        pass_result.append(np.random.choice(['Yes','No'], p=[0.95,0.05]))
+    elif s == 'Medium':
+        pass_result.append(np.random.choice(['Yes','No'], p=[0.75,0.25]))
+    else:  # Low
+        pass_result.append(np.random.choice(['Yes','No'], p=[0.3,0.7]))
+
+data = pd.DataFrame({
+    'Attendance': attendance,
+    'Study_Hours': study_hours,
+    'Pass': pass_result
+})
+
+model.fit(data, estimator=MaximumLikelihoodEstimator)
+
+inference = VariableElimination(model)
+
+evidence = {'Attendance': 'Good'}
+
+result = inference.map_query(variables=['Pass'], evidence=evidence)
+
+print("\nPrediction for student with Good Attendance:")
+print(f"Will student pass? {result['Pass']}")
