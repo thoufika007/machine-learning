@@ -1,0 +1,244 @@
+Delivered-To: thoufika677@gmail.com
+Received: by 2002:a05:6918:1605:b0:3f6:68ae:8c43 with SMTP id c5csp2231703ysp;
+        Mon, 23 Feb 2026 00:13:25 -0800 (PST)
+X-Forwarded-Encrypted: i=3; AJvYcCXvpU2z830o0JTfvZWHW9VSwH4rJJTs5WStBweIOrydqcGp45bVXE7X0Jb8PlLaAUoAzWqKJVozZq0s6w==@gmail.com
+X-Received: by 2002:a05:6402:270a:b0:659:5c63:e0e0 with SMTP id 4fb4d7f45d1cf-65ea4f28c68mr3641857a12.24.1771834405656;
+        Mon, 23 Feb 2026 00:13:25 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1771834405; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=BDs1LuuLWf+jKEXI9cKGkEd6xJ638Ur8R7jVfT6fRWeUPWu348/sNJJL1FvffWnaZH
+         rxEJc0Nif9sSu6hNGTk/G58qI4iK9SrMEQDtGRjMwOztKrPI2Nht82mqIduiidkE35qs
+         nM188T+wDnJ6muBtT5nEeVmrDNYB02gJJ0JI2haXebYyAJtKResY8gnA4Q9+zBfGTdPF
+         5N+tVErfjncyWIOEFmib72FGh9uGMzojhkvODybaGNplbVnu3GTbp0THXI7DSPBx9ua5
+         H8Qf9MF3pkwDACfQE5RTsLlMDa34IBY96UtxVoTYBnHZAcSO85DF9FPMZR9EydaOm3Bc
+         iT3w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=YxqKW0FCiIogt5O5NdSAojLzRNQjsgA3sSeRkkkuUqw=;
+        fh=EjYiTbX7SSSKe2KZEaPms0TqwyPUAZ203TlMB329fyE=;
+        b=DlCdio1z2O+saVuEtX/tm2nw2+VRbeohmmds1ysOC59tEb6vR9pjE1bBc+5t4U98Ia
+         GUuksTNPVjHR8o4eXGA9Up82c0AW5m2lWvdUKlCmcQAy339BtU0IW33XqHl4QhQl51sJ
+         k+hTodFF56U2O2xtm+IvFvaOUtrxXahL8uy0yKoCPF/FyE8oOr5N+o+AWS9FQlKnzLh2
+         Kvy7J1GyIzvlhfPO7+ws9WWuYgZzmCHOMvdMgQ1ds6Hv90dza6jYQgKNPD1PqQZcIwT9
+         o3orQRzlgqg6dNeR3KqT5gywBfqCZ5hZRR5QH550N/arG4mKtzs5dCjcWUqM4bzNIf2s
+         5Ubw==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=GiD7vXLk;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of subashree3017@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=subashree3017@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <subashree3017@gmail.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id 4fb4d7f45d1cf-65eaba56903sor1030526a12.13.2026.02.23.00.13.25
+        for <thoufika677@gmail.com>
+        (Google Transport Security);
+        Mon, 23 Feb 2026 00:13:25 -0800 (PST)
+Received-SPF: pass (google.com: domain of subashree3017@gmail.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=GiD7vXLk;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of subashree3017@gmail.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=subashree3017@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=1; a=rsa-sha256; t=1771834405; cv=none;
+        d=google.com; s=arc-20240605;
+        b=dK6BcQmjTNstt0NUHQhRwl3YRFhFib4NgfEN+2UVATD3UT/nzkwLkboYKJ0WGLTTIK
+         gNxL5Pt9qoPHd3SGon/7JQG+l1Wu8XJixPG9hyJDAef2tnnN1pEkSUe4qLaxAh+ZOvJP
+         kKE7CL6SJkP/AQ1Qnx/SfctecMhKpLUL/3yDXeShx6LWKq2xw8TqK7ztXMNWaf7U1sUw
+         rRcO7hE16QFhth2eDq/ilJjjiOgUhd6K+fFSfpb1T8ULnFi1leJ9AsxEc/f0NQwE+SHJ
+         7dBWbL4hSaPMdlXpXgU/dn/rnzgXsDRzxOrN9iirgVzd7mg1gYQypLLuEIdCc93BKoDL
+         5W8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=YxqKW0FCiIogt5O5NdSAojLzRNQjsgA3sSeRkkkuUqw=;
+        fh=EjYiTbX7SSSKe2KZEaPms0TqwyPUAZ203TlMB329fyE=;
+        b=F9Ip8m5ac+NKBLlx+cj39d+O69TtglNm7t3fWiPee/VkODFFhq5xLryxNvZK99MNT1
+         7vhI6ck1zy0vxwyrbTi3CJnFANF/OMK9RAGA7c3Ab9FneKmL7gZ7XH3yTrH/rSKdwphB
+         R9x9/iqQed9T+Hnf0HNzWdIKu6hSqK80O2CHWJPLZEtse/rvv9yWbshCrRSoSHrEKjZq
+         HP10wNVAtnM1CNQBiK09OWkJsvQVNrHuVm7xqCbUS6VITkuhtTfHg29TulgoWwZo1JuJ
+         fFPpaDJb3Q01g+A3BMyavD+uJO4TD9wtyTgJJs0uiHaPe508AWQLEGDLvSYRZgzVdSXV
+         QoUg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1771834405; x=1772439205; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=YxqKW0FCiIogt5O5NdSAojLzRNQjsgA3sSeRkkkuUqw=;
+        b=GiD7vXLkzxuF/G/S6O/eWoC3Qcd8rVe7P1X05mnGGbwA7GSth5/QwHETypI59Zidgb
+         LFVA2MWwZb/DU1kj0KtRV5ohHtjHIOoI7k37TN/ypWvSUKCiGaLcZfzgCg5UAVsBpYC9
+         jrnkOK8ofQdbpWSFs+8uEkiwdmFCphBNXxvkOQyg5cy9asompqNGlOwm4366CS/p2jJL
+         EYVwBhpY1wRPkuvMpYNMBAbwoqzo9ZW1bCUJ54lJOmdeFIwqmObgZfaCoUMKw0+HkYtt
+         8nE8HDBzNuKPB7yUeLXVPRHu2QYM+diqsS/213qN4XvG1G2Vyq2RiSmVU3PSKHQYP3cu
+         BXVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771834405; x=1772439205;
+        h=to:subject:message-id:date:from:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=YxqKW0FCiIogt5O5NdSAojLzRNQjsgA3sSeRkkkuUqw=;
+        b=eCKbqaDlHariMOI0U4ArcS5SZ5+HeeWkC7rCJAq/oof0nP/sSsQ9uns5qo/NFdsdhU
+         M/xo5LY9lOhEdFMEcvUhs+bQZ/Xvv2R7Wc+zgzOsBc7oK362K2q0rQq9ojrfDzhBGqbr
+         3daI4PQYIX4ha2ZwPyyal9MzNNaFzPqTL5l40ujPpuYrhsoo4WGG13oYaEIStnblu+Ol
+         D0aXsXlPgfgFVE6ZcGng1Db1bi4puMl7SiAvdK49fxUOr8Skv4O8febsbSZz0LYpEBpR
+         JGhYzPy/jxHCyGRwoWV5w/fGSva+8sLab6S7ciSWnDl/jXL+qJoj07W8fNqd1KQqb/BL
+         RGEw==
+X-Forwarded-Encrypted: i=1; AJvYcCXvHUCFXuZjxuyDkMBwAogz6gxq5dUA9ra1UI0otToANqrkbUQpXjMTpK7BES8s4QrjdQT0AfCf6LAIiQ==@gmail.com
+X-Gm-Message-State: AOJu0Yxvle8yW7oyteSoP6aGlcu2TCrBlYpV6MQmly+9lEDewHZZUOZU
+	zVutlnMpQvP/rKVoDf/ksA4f5ArF1+2ePzXk3meWjWu7r0/AwBPvgepduH4JYUXQenNyI27SDMj
+	cG2/rrKcpzAvNdMF3Afm/CM/dln9ksLI=
+X-Gm-Gg: AZuq6aI9G3YHbHuwmcH5tU3DTdTE9Fxr2Bvska/8TBuQt1f960lowheHAh4N82cH4Mx
+	kRWZl0NnSHWNpUEKrGnDV2N/FbUvpfvRTBsvVmX9KjU2YMzx/PCwvdDWs21S8B8VqjIMpXX/qTM
+	8StOZnbbbdV9s2jCFBzgXVUW8Mp9Geshq9yUIoq48UZoDYqoAlU8hMc7rpub7xbcNPZSGub6AfD
+	edd4q823kgu5MEND16isJIb9q89ierUza2mItoAQ0kkI7GhgiXRxZYzbHsgyU3AbKJzbZ3+3+FN
+	BKzZ5wBLpdnpDja/fhIsRm21iZGt9O8Z/kl3Uodh
+X-Received: by 2002:a05:6402:42c8:b0:649:afbf:ce4c with SMTP id
+ 4fb4d7f45d1cf-65ea4edf190mr4586208a12.3.1771834404811; Mon, 23 Feb 2026
+ 00:13:24 -0800 (PST)
+MIME-Version: 1.0
+From: suba shree <subashree3017@gmail.com>
+Date: Mon, 23 Feb 2026 10:59:40 +0530
+X-Gm-Features: AaiRm53OGW3th1LZZ3_1K_r4Rx-VspIwkMd3ped_hUZK61pdKd3FZuVE9oLx53I
+Message-ID: <CAB-3=k-Nec8RW94Z7inAaELE0CidCCGoq0eYqw9z-ZBScr-U9A@mail.gmail.com>
+Subject: 
+To: Vishnu Priya <vishnupriyajaibalaji@gmail.com>, uchihatanziro@gmail.com, 
+	Thoufika <thoufika677@gmail.com>, srinivasan1905@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000004cb637064b795887"
+
+--0000000000004cb637064b795887
+Content-Type: text/plain; charset="UTF-8"
+
+import numpy as np
+from scipy.stats import binom
+
+# Observed data: number of heads in 10 tosses (5 trials)
+heads = np.array([5, 9, 8, 4, 7])
+n_trials = len(heads)
+n_tosses = 10
+
+# Initialize parameters
+theta_A = 0.6
+theta_B = 0.5
+
+# Number of EM iterations
+iterations = 10
+
+for i in range(iterations):
+
+    # -------- E-STEP --------
+    prob_A = binom.pmf(heads, n_tosses, theta_A)
+    prob_B = binom.pmf(heads, n_tosses, theta_B)
+
+    weight_A = prob_A / (prob_A + prob_B)
+    weight_B = prob_B / (prob_A + prob_B)
+
+    # -------- M-STEP --------
+    theta_A = np.sum(weight_A * heads) / np.sum(weight_A * n_tosses)
+    theta_B = np.sum(weight_B * heads) / np.sum(weight_B * n_tosses)
+
+    print(f"Iteration {i+1}")
+    print("Theta_A:", round(theta_A, 4))
+    print("Theta_B:", round(theta_B, 4))
+    print("-----------------------")
+
+print("\nFinal Estimates:")
+print("Theta_A =", round(theta_A, 4))
+print("Theta_B =", round(theta_B, 4))
+
+--0000000000004cb637064b795887
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div style=3D"color:rgb(212,212,212);background-color:rgb(=
+40,42,44);font-family:monospace,Consolas,&quot;Courier New&quot;,monospace;=
+font-size:14px;line-height:19px;white-space:pre"><div><span style=3D"color:=
+rgb(201,156,198)">import</span> numpy <span style=3D"color:rgb(201,156,198)=
+">as</span> np</div><div><span style=3D"color:rgb(201,156,198)">from</span>=
+ scipy.stats <span style=3D"color:rgb(201,156,198)">import</span> binom</di=
+v><br><div><span style=3D"color:rgb(130,183,108)"># Observed data: number o=
+f heads in 10 tosses (5 trials)</span></div><div>heads =3D np.array<span st=
+yle=3D"color:rgb(220,220,220)">([</span><span style=3D"color:rgb(181,206,16=
+8)">5</span><span style=3D"color:rgb(220,220,220)">,</span> <span style=3D"=
+color:rgb(181,206,168)">9</span><span style=3D"color:rgb(220,220,220)">,</s=
+pan> <span style=3D"color:rgb(181,206,168)">8</span><span style=3D"color:rg=
+b(220,220,220)">,</span> <span style=3D"color:rgb(181,206,168)">4</span><sp=
+an style=3D"color:rgb(220,220,220)">,</span> <span style=3D"color:rgb(181,2=
+06,168)">7</span><span style=3D"color:rgb(220,220,220)">])</span></div><div=
+>n_trials =3D <span style=3D"color:rgb(220,220,170)">len</span><span style=
+=3D"color:rgb(220,220,220)">(</span>heads<span style=3D"color:rgb(220,220,2=
+20)">)</span></div><div>n_tosses =3D <span style=3D"color:rgb(181,206,168)"=
+>10</span></div><br><div><span style=3D"color:rgb(130,183,108)"># Initializ=
+e parameters</span></div><div>theta_A =3D <span style=3D"color:rgb(181,206,=
+168)">0.6</span></div><div>theta_B =3D <span style=3D"color:rgb(181,206,168=
+)">0.5</span></div><br><div><span style=3D"color:rgb(130,183,108)"># Number=
+ of EM iterations</span></div><div>iterations =3D <span style=3D"color:rgb(=
+181,206,168)">10</span></div><br><div><span style=3D"color:rgb(201,156,198)=
+">for</span> i <span style=3D"color:rgb(130,198,255)">in</span> <span style=
+=3D"color:rgb(220,220,170)">range</span><span style=3D"color:rgb(220,220,22=
+0)">(</span>iterations<span style=3D"color:rgb(220,220,220)">):</span></div=
+><br><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(130,183,108)"># -------- E=
+-STEP --------</span></div><div>=C2=A0 =C2=A0 prob_A =3D binom.pmf<span sty=
+le=3D"color:rgb(220,220,220)">(</span>heads<span style=3D"color:rgb(220,220=
+,220)">,</span> n_tosses<span style=3D"color:rgb(220,220,220)">,</span> the=
+ta_A<span style=3D"color:rgb(220,220,220)">)</span></div><div>=C2=A0 =C2=A0=
+ prob_B =3D binom.pmf<span style=3D"color:rgb(220,220,220)">(</span>heads<s=
+pan style=3D"color:rgb(220,220,220)">,</span> n_tosses<span style=3D"color:=
+rgb(220,220,220)">,</span> theta_B<span style=3D"color:rgb(220,220,220)">)<=
+/span></div><br><div>=C2=A0 =C2=A0 weight_A =3D prob_A / <span style=3D"col=
+or:rgb(220,220,220)">(</span>prob_A + prob_B<span style=3D"color:rgb(220,22=
+0,220)">)</span></div><div>=C2=A0 =C2=A0 weight_B =3D prob_B / <span style=
+=3D"color:rgb(220,220,220)">(</span>prob_A + prob_B<span style=3D"color:rgb=
+(220,220,220)">)</span></div><br><div>=C2=A0 =C2=A0 <span style=3D"color:rg=
+b(130,183,108)"># -------- M-STEP --------</span></div><div>=C2=A0 =C2=A0 t=
+heta_A =3D np.<span style=3D"color:rgb(220,220,170)">sum</span><span style=
+=3D"color:rgb(220,220,220)">(</span>weight_A * heads<span style=3D"color:rg=
+b(220,220,220)">)</span> / np.<span style=3D"color:rgb(220,220,170)">sum</s=
+pan><span style=3D"color:rgb(220,220,220)">(</span>weight_A * n_tosses<span=
+ style=3D"color:rgb(220,220,220)">)</span></div><div>=C2=A0 =C2=A0 theta_B =
+=3D np.<span style=3D"color:rgb(220,220,170)">sum</span><span style=3D"colo=
+r:rgb(220,220,220)">(</span>weight_B * heads<span style=3D"color:rgb(220,22=
+0,220)">)</span> / np.<span style=3D"color:rgb(220,220,170)">sum</span><spa=
+n style=3D"color:rgb(220,220,220)">(</span>weight_B * n_tosses<span style=
+=3D"color:rgb(220,220,220)">)</span></div><br><div>=C2=A0 =C2=A0 <span styl=
+e=3D"color:rgb(220,220,170)">print</span><span style=3D"color:rgb(220,220,2=
+20)">(</span><span style=3D"color:rgb(105,165,215)">f</span><span style=3D"=
+color:rgb(206,145,120)">&quot;Iteration </span><span style=3D"color:rgb(220=
+,220,220)">{</span>i+<span style=3D"color:rgb(181,206,168)">1</span><span s=
+tyle=3D"color:rgb(220,220,220)">}</span><span style=3D"color:rgb(206,145,12=
+0)">&quot;</span><span style=3D"color:rgb(220,220,220)">)</span></div><div>=
+=C2=A0 =C2=A0 <span style=3D"color:rgb(220,220,170)">print</span><span styl=
+e=3D"color:rgb(220,220,220)">(</span><span style=3D"color:rgb(206,145,120)"=
+>&quot;Theta_A:&quot;</span><span style=3D"color:rgb(220,220,220)">,</span>=
+ <span style=3D"color:rgb(220,220,170)">round</span><span style=3D"color:rg=
+b(220,220,220)">(</span>theta_A<span style=3D"color:rgb(220,220,220)">,</sp=
+an> <span style=3D"color:rgb(181,206,168)">4</span><span style=3D"color:rgb=
+(220,220,220)">))</span></div><div>=C2=A0 =C2=A0 <span style=3D"color:rgb(2=
+20,220,170)">print</span><span style=3D"color:rgb(220,220,220)">(</span><sp=
+an style=3D"color:rgb(206,145,120)">&quot;Theta_B:&quot;</span><span style=
+=3D"color:rgb(220,220,220)">,</span> <span style=3D"color:rgb(220,220,170)"=
+>round</span><span style=3D"color:rgb(220,220,220)">(</span>theta_B<span st=
+yle=3D"color:rgb(220,220,220)">,</span> <span style=3D"color:rgb(181,206,16=
+8)">4</span><span style=3D"color:rgb(220,220,220)">))</span></div><div>=C2=
+=A0 =C2=A0 <span style=3D"color:rgb(220,220,170)">print</span><span style=
+=3D"color:rgb(220,220,220)">(</span><span style=3D"color:rgb(206,145,120)">=
+&quot;-----------------------&quot;</span><span style=3D"color:rgb(220,220,=
+220)">)</span></div><br><div><span style=3D"color:rgb(220,220,170)">print</=
+span><span style=3D"color:rgb(220,220,220)">(</span><span style=3D"color:rg=
+b(206,145,120)">&quot;\nFinal Estimates:&quot;</span><span style=3D"color:r=
+gb(220,220,220)">)</span></div><div><span style=3D"color:rgb(220,220,170)">=
+print</span><span style=3D"color:rgb(220,220,220)">(</span><span style=3D"c=
+olor:rgb(206,145,120)">&quot;Theta_A =3D&quot;</span><span style=3D"color:r=
+gb(220,220,220)">,</span> <span style=3D"color:rgb(220,220,170)">round</spa=
+n><span style=3D"color:rgb(220,220,220)">(</span>theta_A<span style=3D"colo=
+r:rgb(220,220,220)">,</span> <span style=3D"color:rgb(181,206,168)">4</span=
+><span style=3D"color:rgb(220,220,220)">))</span></div><div><span style=3D"=
+color:rgb(220,220,170)">print</span><span style=3D"color:rgb(220,220,220)">=
+(</span><span style=3D"color:rgb(206,145,120)">&quot;Theta_B =3D&quot;</spa=
+n><span style=3D"color:rgb(220,220,220)">,</span> <span style=3D"color:rgb(=
+220,220,170)">round</span><span style=3D"color:rgb(220,220,220)">(</span>th=
+eta_B<span style=3D"color:rgb(220,220,220)">,</span> <span style=3D"color:r=
+gb(181,206,168)">4</span><span style=3D"color:rgb(220,220,220)">))</span></=
+div></div></div>
+
+--0000000000004cb637064b795887--
