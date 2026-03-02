@@ -1,0 +1,57 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+from sklearn.preprocessing import StandardScaler
+
+# Load California Housing dataset
+data = fetch_california_housing()
+X = data.data
+y = data.target
+
+# For visualization, we use only one feature (MedInc - Median Income)
+X = X[:, 0].reshape(-1, 1)
+
+# Scale feature (important for LWLR)
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+
+X = np.column_stack((np.ones(len(X)), X))
+
+def kernel(point, X, k):
+    diff = X - point
+    weights = np.exp(-np.sum(diff**2, axis=1) / (2 * k**2))
+    return np.diag(weights)
+
+# Compute local weights
+def local_weight(point, X, y, k):
+    W = kernel(point, X, k)
+    XT_W = X.T @ W
+    theta = np.linalg.pinv(XT_W @ X) @ XT_W @ y
+    return theta
+
+def local_weight_regression(X, y, k):
+    y_pred = np.zeros(len(X))
+    for i in range(len(X)):
+        theta = local_weight(X[i], X, y, k)
+        y_pred[i] = X[i] @ theta
+    return y_pred
+
+# Set bandwidth parameter
+k = 0.5
+y_pred = local_weight_regression(X, y, k)
+
+# Sort for smooth plotting
+sort_idx = np.argsort(X[:, 1])
+X_sorted = X[sort_idx]
+y_pred_sorted = y_pred[sort_idx]
+
+# Plot results
+plt.figure(figsize=(8,6))
+plt.scatter(X[:, 1], y, color='green', s=10, label="Actual Prices")
+plt.plot(X_sorted[:, 1], y_pred_sorted, color='red', linewidth=2, label="LWLR Prediction")
+
+plt.xlabel("Median Income (Scaled)")
+plt.ylabel("House Price")
+plt.title("House Price Prediction using LWLR")
+plt.legend()
+plt.show()
